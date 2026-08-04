@@ -1,7 +1,7 @@
 # fraud-gvt — When Does the Graph Help?
 
 GNNs vs tabular baselines for fraud detection under controlled regimes.
-Read docs/protocol.md first — it is the constitution.
+Read docs/protocol.md first - it is the constitution.
 
 ## Quickstart (pilot path, no torch needed)
 
