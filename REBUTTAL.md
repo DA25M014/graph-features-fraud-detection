@@ -39,6 +39,8 @@ XGBoost gives the same picture. We should be candid: this refutes our own Sectio
 
 **5. Learned graph representations.** This coincides with the message-passing rungs Section 5 reserves for the archival version, and we commit to adding at least one there. We scoped this abstract to GBDTs because GADBench finds tree ensembles competitive with or superior to GNNs on these benchmarks, and Vandervorst et al. outperform HinSAGE, HAN, and HGT with gradient boosting over neighborhood features. Both leakage mechanisms apply to any model consuming label-derived features, learned or not.
 
+We are happy to clarify anything further at any point, in this rebuttal round or the discussion phase.
+
 ---
 
 ## Reply to Reviewer uDZK (rating 4)
