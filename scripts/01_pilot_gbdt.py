@@ -1,7 +1,6 @@
 """Pilot: rung (a) features-only, (b0) +static graph feats, (b) +label feats.
 
-(b)-(b0) isolates the label-propagation features -- the anomaly-A1 instrument.
-This is the kill-switch evidence generator (protocol.md S9, checkpoint Aug 4).
+(b)-(b0) isolates the marginal value of the label-propagation features.
 
 Usage:
     python scripts/01_pilot_gbdt.py --datasets yelp amazon \
@@ -56,7 +55,7 @@ def main():
             lab_b, lab_names = label_graph_features(
                 gd, train_mask=np.isin(np.arange(gd.n), tr))
             if seed == 0:
-                # anomaly-A1 diagnostic: label-feat reachability across split
+                # diagnostic: label-feature reachability across the split
                 for nm, trm, tem in zip(lab_names, lab_b[tr].mean(0),
                                         lab_b[te].mean(0)):
                     print(f"   [labfeat] {nm}: train_mean={trm:.4f} "

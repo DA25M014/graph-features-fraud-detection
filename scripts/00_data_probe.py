@@ -1,4 +1,4 @@
-"""Day-0 access probe: fetch/verify all datasets, print stats, surface blockers.
+"""Access probe: fetch/verify all datasets, print stats, surface blockers.
 
 Usage:  python scripts/00_data_probe.py
 """
@@ -59,4 +59,4 @@ else:
     ok.append("elliptic")
 
 print(f"\nprobe result: {len(ok)} ok, {len(blocked)} blocked "
-      f"{'-> resolve before Aug 1' if blocked else '-> all clear for Day 1'}")
+      f"{'-> resolve blockers before running the pilot' if blocked else '-> all clear'}")

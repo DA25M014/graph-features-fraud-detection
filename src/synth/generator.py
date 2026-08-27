@@ -1,6 +1,6 @@
 """Camouflage fraud-SBM: the controlled instrument for the regime map.
 
-Three knobs (protocol.md S8):
+Three knobs:
   feat_strength s >= 0 : class-mean separation in units of feature std.
                          s=0 -> features carry zero class signal.
   camouflage    c in [0,1]: c=0 -> assortative fraud (fraudsters cluster,
@@ -50,7 +50,7 @@ def make_fraud_sbm(n: int = 4000, fraud_rate: float = 0.1, feat_dim: int = 24,
         # 0.5x compensates for maximum-symmetrization of two directed draws.
         # NB: homophily floor at c=1 is coupled to fraud_rate (few fraud nodes
         # -> n-n edges dominate). The Phase-2 grid sweeps fraud_rate in
-        # {0.05, 0.15} to bracket amazon (6.9%) / yelp (14.5%); Day 9-10
+        # {0.05, 0.15} to bracket amazon (6.9%) / yelp (14.5%)
         # calibrates knob ranges against the real-data homophily anchors.
         m = rng.random((len(rows), len(cols))) < (0.5 * p)
         r, c = np.nonzero(m)
