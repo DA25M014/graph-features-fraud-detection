@@ -1,9 +1,8 @@
 """Rung (a)/(b) models: GBDTs + RF behind one interface.
 
-Deliberately near-default hyperparameters for the pilot (pre-registered in
-protocol.md S6): the paper's claim is about information sources, not tuning
-wizardry. A light tuning pass happens ONCE, symmetrically across rungs, in
-Phase 2 - never per-cell.
+Deliberately near-default hyperparameters: the paper's claim is about
+information sources, not tuning. Any tuning pass happens once,
+symmetrically across rungs - never per-cell.
 """
 from __future__ import annotations
 

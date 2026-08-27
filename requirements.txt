@@ -5,3 +5,4 @@ scikit-learn>=1.4
 lightgbm>=4.0
 xgboost>=2.0
 torch>=2.3        # GNN rung only; pilot path (scripts/00,01) needs none of it
+matplotlib>=3.8   # figures (scripts/02) only
