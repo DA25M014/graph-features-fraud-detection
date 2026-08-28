@@ -28,3 +28,7 @@ src/features/graph_features.py; it is never used for a real model.
   results.csv to 5 decimals.
 - results/rebuttal.csv, results/rebuttal_importance.csv: the outputs.
 - logs/rebuttal_runs.log: full stdout of the run.
+- scripts/04_revision_figures.py: regenerates the figures and tables for the
+  revised manuscript from the same results.csv, with the rungs relabeled
+  a/b/c (paper) = a/b0/b (code), no error bars on the deterministic Elliptic
+  panels, and Elliptic table cells printed without a vacuous +-0.000.

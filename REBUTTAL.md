@@ -22,7 +22,7 @@ We thank the reviewer for the careful reading and the constructive suggestions. 
 
 **1. Narrowing generality.** We agree. Section 5 already limits the study to three benchmarks and one split family per dataset, but the abstract and Section 3 outrun that paragraph. We will rephrase both to scope the claims to the evaluated benchmarks, and replace the abstract's "moderate label rates" with the explicit tested range (r in {0.05, 0.1, 0.2, 0.4}, given the new sweep below).
 
-**2. Lower label rates.** We ran the suggested sweep: r in {0.05, 0.1, 0.2, 0.4} on YelpChi and Amazon, both models, 5 seeds, same pipeline, loaders, and hyperparameters as the paper. The null result persists at every rate: across all rates, both datasets, and both models, the label-feature increment b minus b0 lies within [-0.0083, +0.0033]. LightGBM (AUPRC, mean over 5 seeds; seed stds 0.003 to 0.025):
+**2. Lower label rates.** We ran the suggested sweep: r in {0.05, 0.1, 0.2, 0.4} on YelpChi and Amazon, both models, 5 seeds, same pipeline, loaders, and hyperparameters as the paper. The null result persists at every rate: across all rates, both datasets, and both models, the label-feature increment b minus b0 lies within [-0.0084, +0.0034]. LightGBM (AUPRC, mean over 5 seeds; seed stds 0.003 to 0.025):
 
 | r | YelpChi b0 | YelpChi b | Amazon b0 | Amazon b |
 |---|---|---|---|---|
@@ -96,7 +96,7 @@ Thank you for the careful reading and for finding the diagnostic observations us
 
 **C2 (no GNN baseline).** Correct as a fact, and we will keep the claims scoped accordingly. One clarification: the paper never claims richer graph models are unnecessary. Its claims are about feature families, which is orthogonal to model choice. For why a GBDT baseline is strong on these benchmarks we rely on the external evidence already cited: GADBench finds tree ensembles competitive with and often superior to GNNs on these datasets, and Vandervorst et al. outperform HinSAGE, HAN, and HGT with gradient boosting over neighborhood features. Section 5 pre-registers message-passing rungs for the archival version. We also note that both mechanisms apply to any model consuming label-derived features, GNN or not.
 
-**C3 (only a 40% label rate).** We agree this was the main evidential gap, so we ran the sweep: r in {0.05, 0.1, 0.2, 0.4} on YelpChi and Amazon, same pipeline, loaders, and hyperparameters as the paper, 5 seeds. The null result persists at every rate: the label-rung increment (b) minus (b0) lies within [-0.0083, +0.0033] across both datasets, all four rates, and both models, while static graph features deliver clear gains on YelpChi at every rate and on Amazon at r ≥ 0.10 (at r = 0.05 the Amazon gain sits within seed noise), e.g. YelpChi at r=0.05: 0.615 to 0.706 AUPRC for LightGBM. YelpChi, LightGBM, mean ± std over 5 seeds:
+**C3 (only a 40% label rate).** We agree this was the main evidential gap, so we ran the sweep: r in {0.05, 0.1, 0.2, 0.4} on YelpChi and Amazon, same pipeline, loaders, and hyperparameters as the paper, 5 seeds. The null result persists at every rate: the label-rung increment (b) minus (b0) lies within [-0.0084, +0.0034] across both datasets, all four rates, and both models, while static graph features deliver clear gains on YelpChi at every rate and on Amazon at r ≥ 0.10 (at r = 0.05 the Amazon gain sits within seed noise), e.g. YelpChi at r=0.05: 0.615 to 0.706 AUPRC for LightGBM. YelpChi, LightGBM, mean ± std over 5 seeds:
 
 | r | (a) raw | (b0) +static | (b) +label |
 |---|---------|--------------|------------|
