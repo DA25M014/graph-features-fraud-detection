@@ -1,4 +1,6 @@
-"""Rung (c): GCN + GraphSAGE-mean in pure PyTorch (sparse ops only).
+"""Unused by the paper (archival scaffolding): GCN + GraphSAGE-mean in pure
+PyTorch (sparse ops only). The paper's rung (c) is the label-feature rung in
+src/features/graph_features.py, not this module.
 
 Deliberately dependency-light: no PyG/DGL, so the pilot path can never be
 blocked by wheel availability on Python 3.13. GAT and the fraud specialist

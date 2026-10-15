@@ -1,0 +1,76 @@
+yelp: N=45954 F=32 edges=3846979 labeled=45954 fraud=6677 (14.5%) evalable=45954
+  yelp      raw features F                           32
+  yelp      two-valued raw columns                   4
+  yelp      relation-specific graphs R               3
+  yelp      rung (a) width                           32
+  yelp      rung (b) width                           132
+  yelp      rung (c) width                           136
+  yelp      label-only control width                 36
+  yelp      seed 0 leaky h1_frac_train_labeled    train 0.3990  test 0.4001
+  yelp      seed 0 leaky h1_train_fraud_frac      train 0.1410  test 0.1406
+  yelp      seed 0 leaky h2_frac_train_labeled    train 0.4046  test 0.3945
+  yelp      seed 0 leaky h2_train_fraud_frac      train 0.1385  test 0.1377
+  yelp      seed 0 clean h1_frac_train_labeled    train 0.3990  test 0.4001
+  yelp      seed 0 clean h1_train_fraud_frac      train 0.1410  test 0.1406
+  yelp      seed 0 clean h2_frac_train_labeled    train 0.3982  test 0.3985
+  yelp      seed 0 clean h2_train_fraud_frac      train 0.1376  test 0.1377
+  yelp      seed 1 leaky h1_frac_train_labeled    train 0.4002  test 0.4004
+  yelp      seed 1 leaky h1_train_fraud_frac      train 0.1412  test 0.1421
+  yelp      seed 1 leaky h2_frac_train_labeled    train 0.4065  test 0.3966
+  yelp      seed 1 leaky h2_train_fraud_frac      train 0.1391  test 0.1386
+  yelp      seed 1 clean h1_frac_train_labeled    train 0.4002  test 0.4004
+  yelp      seed 1 clean h1_train_fraud_frac      train 0.1412  test 0.1421
+  yelp      seed 1 clean h2_frac_train_labeled    train 0.4003  test 0.4005
+  yelp      seed 1 clean h2_train_fraud_frac      train 0.1383  test 0.1386
+  yelp      seed 2 leaky h1_frac_train_labeled    train 0.4001  test 0.3999
+  yelp      seed 2 leaky h1_train_fraud_frac      train 0.1414  test 0.1416
+  yelp      seed 2 leaky h2_frac_train_labeled    train 0.4059  test 0.3955
+  yelp      seed 2 leaky h2_train_fraud_frac      train 0.1385  test 0.1380
+  yelp      seed 2 clean h1_frac_train_labeled    train 0.4001  test 0.3999
+  yelp      seed 2 clean h1_train_fraud_frac      train 0.1414  test 0.1416
+  yelp      seed 2 clean h2_frac_train_labeled    train 0.3994  test 0.3994
+  yelp      seed 2 clean h2_train_fraud_frac      train 0.1377  test 0.1380
+  yelp      seed 3 leaky h1_frac_train_labeled    train 0.3994  test 0.3999
+  yelp      seed 3 leaky h1_train_fraud_frac      train 0.1414  test 0.1416
+  yelp      seed 3 leaky h2_frac_train_labeled    train 0.4058  test 0.3952
+  yelp      seed 3 leaky h2_train_fraud_frac      train 0.1395  test 0.1389
+  yelp      seed 3 clean h1_frac_train_labeled    train 0.3994  test 0.3999
+  yelp      seed 3 clean h1_train_fraud_frac      train 0.1414  test 0.1416
+  yelp      seed 3 clean h2_frac_train_labeled    train 0.3993  test 0.3992
+  yelp      seed 3 clean h2_train_fraud_frac      train 0.1387  test 0.1389
+  yelp      seed 4 leaky h1_frac_train_labeled    train 0.3994  test 0.3989
+  yelp      seed 4 leaky h1_train_fraud_frac      train 0.1408  test 0.1412
+  yelp      seed 4 leaky h2_frac_train_labeled    train 0.4050  test 0.3946
+  yelp      seed 4 leaky h2_train_fraud_frac      train 0.1382  test 0.1378
+  yelp      seed 4 clean h1_frac_train_labeled    train 0.3994  test 0.3989
+  yelp      seed 4 clean h1_train_fraud_frac      train 0.1408  test 0.1412
+  yelp      seed 4 clean h2_frac_train_labeled    train 0.3987  test 0.3985
+  yelp      seed 4 clean h2_train_fraud_frac      train 0.1376  test 0.1378
+amazon: N=11944 F=25 edges=4398392 labeled=11944 fraud=821 (6.9%) evalable=8639
+  amazon    raw features F                           25
+  amazon    two-valued raw columns                   1
+  amazon    relation-specific graphs R               3
+  amazon    rung (a) width                           25
+  amazon    rung (b) width                           104
+  amazon    rung (c) width                           108
+  amazon    label-only control width                 29
+  amazon    first evaluable node index               3305
+elliptic: N=203769 F=165 edges=234355 labeled=46564 fraud=4545 (9.8%) evalable=46564
+  elliptic  raw features F                           165
+  elliptic  two-valued raw columns                   0
+  elliptic  relation-specific graphs R               0
+  elliptic  rung (a) width                           165
+  elliptic  rung (b) width                           661
+  elliptic  rung (c) width                           665
+  elliptic  label-only control width                 169
+  elliptic  undirected edges                         234355
+  elliptic  edges crossing timesteps                 0
+  elliptic  connected components                     49
+  elliptic  timesteps                                49
+  elliptic  seed None clean h1_frac_train_labeled    train 0.6307  test 0.0000  (every test value is 0)
+  elliptic  seed None clean h1_train_fraud_frac      train 0.0449  test 0.0000  (every test value is 0)
+  elliptic  seed None clean h2_frac_train_labeled    train 0.5572  test 0.0000  (every test value is 0)
+  elliptic  seed None clean h2_train_fraud_frac      train 0.0811  test 0.0000  (every test value is 0)
+
+wrote results/labfeat_diagnostics.csv
+wrote results/data_diagnostics.csv

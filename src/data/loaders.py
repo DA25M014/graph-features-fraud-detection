@@ -3,8 +3,8 @@
 Conventions (match CARE-GNN / GADBench where they exist):
 - Amazon: nodes 0..3304 are excluded from train/eval splits (standard convention;
   these users have too few reviews to label reliably). eval_mask handles this.
-- Elliptic: temporal evaluation. Standard split = train timesteps 1-34,
-  test 35-49. Unknown-class nodes excluded from splits but KEPT in the graph
+- Elliptic: temporal evaluation. Models are fit on timesteps 1-29
+  (30-34 are held out and unused), test is 35-49. Unknown-class nodes excluded from splits but KEPT in the graph
   (they still carry structural signal for neighbor aggregation / GNNs).
 """
 from __future__ import annotations

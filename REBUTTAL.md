@@ -1,5 +1,7 @@
 # Author responses to the LoG 2026 reviews (submission #127)
 
+> **Camera-ready note (Oct 2026).** The text below is the response posted during the review period (Aug 2026), kept unchanged. The revisions it promises are in the camera-ready version. Since it was posted: the test-set bootstrap intervals promised under W5 are in `results/bootstrap_elliptic.csv` (`scripts/05_bootstrap_elliptic.py`, log in `logs/bootstrap_elliptic.log`); the label-feature means, feature counts, and Elliptic graph diagnostics quoted below and in the paper are produced by `scripts/06_labfeat_diagnostics.py` (`results/labfeat_diagnostics.csv`, `results/data_diagnostics.csv`). This file uses the code rung names; the paper's (a)/(b)/(c) are code a/b0/b.
+
 This document accompanies the OpenReview author rebuttal, whose length limit (2,500 characters) cannot hold point-by-point responses to four reviews. Every number here comes from the paper or from the rebuttal runs in this repository (scripts/03_rebuttal_runs.py, results/rebuttal.csv, results/rebuttal_importance.csv, logs/rebuttal_runs.log); the r=0.40 rerun reproduces all 12 published YelpChi/Amazon cells to 5 decimals.
 
 ## Reply to Reviewer YiMm (rating 7)

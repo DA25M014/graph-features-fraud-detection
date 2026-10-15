@@ -1,0 +1,27 @@
+dataset,quantity,value
+yelp,raw features F,32
+yelp,two-valued raw columns,4
+yelp,relation-specific graphs R,3
+yelp,rung (a) width,32
+yelp,rung (b) width,132
+yelp,rung (c) width,136
+yelp,label-only control width,36
+amazon,raw features F,25
+amazon,two-valued raw columns,1
+amazon,relation-specific graphs R,3
+amazon,rung (a) width,25
+amazon,rung (b) width,104
+amazon,rung (c) width,108
+amazon,label-only control width,29
+amazon,first evaluable node index,3305
+elliptic,raw features F,165
+elliptic,two-valued raw columns,0
+elliptic,relation-specific graphs R,0
+elliptic,rung (a) width,165
+elliptic,rung (b) width,661
+elliptic,rung (c) width,665
+elliptic,label-only control width,169
+elliptic,undirected edges,234355
+elliptic,edges crossing timesteps,0
+elliptic,connected components,49
+elliptic,timesteps,49

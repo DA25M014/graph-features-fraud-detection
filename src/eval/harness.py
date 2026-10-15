@@ -47,7 +47,9 @@ def random_split(y: np.ndarray, eval_mask: np.ndarray, train_rate: float,
 
 def temporal_split(y: np.ndarray, timesteps: np.ndarray,
                    train_end: int = 34, val_from: int = 30):
-    """Elliptic convention: train ts<=34, test ts>=35; val = tail of train."""
+    """Elliptic temporal split: models are fit on ts<=29 (train); ts 30-34
+    is returned as val but never consulted by the paper's pipeline; test is
+    ts>=35."""
     lab = y >= 0
     train = np.where(lab & (timesteps <= train_end) & (timesteps < val_from))[0]
     val = np.where(lab & (timesteps >= val_from) & (timesteps <= train_end))[0]

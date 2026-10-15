@@ -1,0 +1,25 @@
+elliptic: N=203769 F=165 edges=234355 labeled=46564 fraud=4545 (9.8%) evalable=46564
+train 26381  test 16670  test positives 1083
+  lightgbm  a        AUPRC 0.790597  published 0.7905971422865573  OK
+  lightgbm  aL       AUPRC 0.778214  published 0.7782135718692554  OK
+  lightgbm  b0       AUPRC 0.793901  published 0.7939012031405909  OK
+  lightgbm  b        AUPRC 0.785148  published 0.7851481078788771  OK
+  lightgbm  b_leaky  AUPRC 0.719099  published 0.7190988263623627  OK
+  xgboost   a        AUPRC 0.786880  published 0.7868804562435043  OK
+  xgboost   aL       AUPRC 0.778931  published 0.7789309172093584  OK
+  xgboost   b0       AUPRC 0.799896  published 0.7998960214222546  OK
+  xgboost   b        AUPRC 0.789048  published 0.7890480240566573  OK
+  xgboost   b_leaky  AUPRC 0.650495  published 0.6504948135696127  OK
+  lightgbm  static gain (b)-(a)                  +0.0033 [-0.0008, +0.0074]  sign-consistent 0.945
+  lightgbm  label features (c)-(b)               -0.0088 [-0.0122, -0.0055]  sign-consistent 1.000
+  lightgbm  leaky label features (c)leaky-(b)    -0.0748 [-0.0943, -0.0552]  sign-consistent 1.000
+  lightgbm  leak alone (c)leaky-(c)              -0.0660 [-0.0859, -0.0467]  sign-consistent 1.000
+  lightgbm  label-only control aL-(a)            -0.0124 [-0.0161, -0.0088]  sign-consistent 1.000
+  xgboost   static gain (b)-(a)                  +0.0130 [+0.0086, +0.0176]  sign-consistent 1.000
+  xgboost   label features (c)-(b)               -0.0108 [-0.0156, -0.0065]  sign-consistent 1.000
+  xgboost   leaky label features (c)leaky-(b)    -0.1494 [-0.1756, -0.1228]  sign-consistent 1.000
+  xgboost   leak alone (c)leaky-(c)              -0.1386 [-0.1654, -0.1118]  sign-consistent 1.000
+  xgboost   label-only control aL-(a)            -0.0079 [-0.0116, -0.0044]  sign-consistent 1.000
+
+wrote results/bootstrap_elliptic.csv
+wrote results/elliptic_test_predictions.npz

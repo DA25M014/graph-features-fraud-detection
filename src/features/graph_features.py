@@ -1,19 +1,19 @@
-"""Rung (b): graph-derived features for tabular models.
+"""Graph-derived features for tabular models (paper rungs (b) and (c)).
 
-Two families:
+Paper rung (b) = code rung b0 adds the STATIC family; paper rung (c) = code
+rung b adds the LABEL-DEPENDENT family on top.
+
 1. STATIC (split-independent, compute once per dataset):
-   - log-degree on homo graph + each relation graph
-   - 1-hop mean & max of raw features (row-normalized adjacency)
-   - 2-hop mean of raw features
-2. LABEL-DEPENDENT (recompute per split; uses TRAIN labels only -> leakage-safe
-   by construction):
+   - log-degree on the homogeneous graph + each relation graph (1 + R)
+   - 1-hop mean and 1-hop mean of squares of raw features (row-normalized
+     adjacency D^-1 A)
+   - 2-hop mean of raw features, (D^-1 A)^2 x
+2. LABEL-DEPENDENT (recompute per split; uses TRAIN labels only):
    - fraction of neighbors that are train-labeled
    - fraud fraction among train-labeled neighbors (0 where none)
-   - same two at 2 hops
-
-The amplifier hypothesis lives or dies here: if rung (b) closes the gap to
-GNNs, the graph's value is feature-extractable ("amplifier"); if GNNs retain
-an edge, message passing adds something aggregation can't ("source").
+   - the same two over two-step walks A(Av), counted with multiplicity and
+     with backtracking walks i->j->i removed (diag(A^2) = deg); keeping them
+     is the self-walk leak (paper M1), available only via legacy_leaky=True.
 """
 from __future__ import annotations
 
@@ -64,7 +64,7 @@ def label_graph_features(gd: GraphData, train_mask: np.ndarray,
     """Train-label neighbor statistics. train_mask: (N,) bool.
 
     legacy_leaky=True reproduces the pre-Jul-23 bug (backtracking self-walks
-    kept in the 2-hop counts) for the paper's M2 figures ONLY. Never use it
+    kept in the 2-hop counts) for the paper's M1 figures ONLY. Never use it
     for a real model."""
     lab = train_mask.astype(np.float32)                     # is train-labeled
     fraud = (train_mask & (gd.y == 1)).astype(np.float32)   # is train-labeled fraud
@@ -76,7 +76,7 @@ def label_graph_features(gd: GraphData, train_mask: np.ndarray,
     sub = 0.0 if legacy_leaky else 1.0
     # 2-hop stats via A.(A.v) walk counts -- O(nnz), never materializes A^2.
     # Backtracking walks i->j->i are subtracted (diag(A^2)=deg): otherwise a
-    # train node's OWN label leaks into its own 2-hop feature (Jul-23 bug M2).
+    # train node's OWN label leaks into its own 2-hop feature (Jul-23 bug, paper M1).
     hops = (("1", (a.dot(lab), a.dot(fraud), a.dot(ones))),
             ("2", (a.dot(a.dot(lab)) - sub * deg * lab,
                    a.dot(a.dot(fraud)) - sub * deg * fraud,
